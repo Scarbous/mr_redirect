@@ -1,0 +1,12 @@
+
+# cat=Basic/enable; type=boolean; label=activate 301 redirects
+301.activate=
+
+# cat=basic/enable; type=string; label=Path to configuration file:The File contains the 301 Redirects
+301.configFile = typo3conf/301_redirect.php
+
+# cat=Basic/enable; type=boolean; label=activate 404 redirects
+404.activate=
+
+# cat=basic/enable; type=string; label=Path to configuration file:The File contains the 404 Redirects
+404.configFile = typo3conf/404_redirect.php
