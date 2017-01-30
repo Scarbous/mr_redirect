@@ -41,8 +41,9 @@ class RedirectService implements \TYPO3\CMS\Core\SingletonInterface
 
     function testRedirects()
     {
-        $this->testFile   = 'typo3conf/' . $this->type . '_test.csv';
-        $testFile = ExtensionUtility::getExtPath() . $this->testFile;
+        $this->testFile = 'typo3conf/' . $this->type . '_test.csv';
+
+        $testFile = PATH_site . $this->testFile;
 
         if (file_exists($testFile)) {
             $testRedirects = GeneralUtility::getUrl($testFile);
@@ -54,7 +55,7 @@ class RedirectService implements \TYPO3\CMS\Core\SingletonInterface
                     list($from, $to) = explode("\t", $redirect);
                     $result = $this->check($from);
 
-                    if(
+                    if (
                         trim($result) == trim($to)
                         || trim($to) == '-' && $result
                     ) {
@@ -106,7 +107,7 @@ class RedirectService implements \TYPO3\CMS\Core\SingletonInterface
         do {
             $this->checkCount++;
             $lastTarget = $target;
-            $url        = $lastTarget ? : $url;
+            $url        = $lastTarget ?: $url;
 
             $target = $this->checkDirectRedirects($url);
             if (!$target) {
@@ -147,6 +148,7 @@ class RedirectService implements \TYPO3\CMS\Core\SingletonInterface
     function checkPregMatchRedirects($url)
     {
         $redirects = $this->getPregMatchRedirects();
+
         if ($redirects) {
             foreach ($redirects as $pattern => $target) {
                 if (preg_match($pattern, $url)) {
@@ -227,11 +229,10 @@ class RedirectService implements \TYPO3\CMS\Core\SingletonInterface
     {
         $configuration = ExtensionUtility::getConfiguration();
 
-        if($configFile = $configuration[$this->type.'.']['configFile']) {
+        if ($configFile = $configuration[$this->type . '.']['configFile']) {
             $this->configFile = $configFile;
         }
 
-        $configFile = ExtensionUtility::getExtPath() . $this->configFile;
         if (file_exists($configFile)) {
             $redirects = include $configFile;
             if (is_array($redirects) && count($redirects) > 0) {
