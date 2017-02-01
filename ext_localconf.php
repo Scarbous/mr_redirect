@@ -5,6 +5,7 @@ $extConfig = \Scarbous\MrRedirect\Utility\ExtensionUtility::getConfiguration();
 
 
 if (@$extConfig['404.']['activate']) {
+    $TYPO3_CONF_VARS['FE']['pageNotFound_handling_after'] = $TYPO3_CONF_VARS['FE']['pageNotFound_handling'];
     $TYPO3_CONF_VARS['FE']['pageNotFound_handling'] =
         'USER_FUNCTION:' . \Scarbous\MrRedirect\Handler\PageNotFound::class . '->main';
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-31T07:37:47Z" product-name="mr_redirect">
+		<header/>
+		<body>
+			<trans-unit id="type.description">
+				<source>type</source>
+			</trans-unit>
+			<trans-unit id="request_uri.description">
+				<source>requestUri</source>
+			</trans-unit>
+			<trans-unit id="target.description">
+				<source>target</source>
+			</trans-unit>
+			<trans-unit id="log_data.description">
+				<source>logData</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

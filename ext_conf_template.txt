@@ -10,3 +10,9 @@
 
 # cat=basic/enable; type=string; label=Path to configuration file:The File contains the 404 Redirects
 404.configFile = typo3conf/404_redirect.php
+
+# cat=basic/enable; type=string; label=Redirect after 404:Redirect if no redirect query matches
+404.redirectIfError = /404-seite/
+
+# cat=basic/enable; type=boolean; label=log 404 requests:Which will not redirect
+404.log=

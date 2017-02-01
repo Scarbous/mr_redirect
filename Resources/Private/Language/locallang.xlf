@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-31T07:37:47Z" product-name="mr_redirect">
+		<header/>
+		<body>
+			<trans-unit id="tx_mrredirect_domain_model_log">
+				<source>Log</source>
+			</trans-unit>
+			<trans-unit id="tx_mrredirect_domain_model_log.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_mrredirect_domain_model_log.request_uri">
+				<source>Request Uri</source>
+			</trans-unit>
+			<trans-unit id="tx_mrredirect_domain_model_log.target">
+				<source>Target</source>
+			</trans-unit>
+			<trans-unit id="tx_mrredirect_domain_model_log.log_data">
+				<source>Log Data</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

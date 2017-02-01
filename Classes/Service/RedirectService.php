@@ -84,6 +84,23 @@ class RedirectService implements \TYPO3\CMS\Core\SingletonInterface
 
                 }
             }
+            if (is_array($testTesult['ok']) && count($testTesult['ok']) > 0) {
+                $count = 0;
+                foreach ($testTesult['ok'] as $from => $value) {
+                    $count++;
+                    $headers = get_headers($value['new']);
+                    $status = substr($headers[0], 9, 3);
+                    if($status == 404) {
+                    echo 'FROM:' . $from . PHP_EOL
+                        . 'OLD: ' . $value['old'] . PHP_EOL
+                        . 'NEW: ' . $value['new'] . PHP_EOL
+                        . 'COUNT:' . $value['checkCount'] . PHP_EOL
+                        . PHP_EOL;
+                    }
+                    if($count > 20) die('to many');
+                }
+            }
+
         }
         die();
     }
